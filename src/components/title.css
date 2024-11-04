@@ -1,0 +1,10 @@
+.texto-fondo {
+  background: #0d0628
+    url('https://static.displate.com/brand/layout/3134386d-c57f-4bb8-882e-6c4aee42dd49/headerDesktopStandard.jpg');
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: cover;
+  color: #0d0628;
+  text-align: center;
+}
