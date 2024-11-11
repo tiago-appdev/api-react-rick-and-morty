@@ -70,19 +70,32 @@ const CharacterDetail = () => {
             <p>
               <strong>Estado:</strong>{' '}
               {character.status === 'Alive' ? (
-                <span className='bg-green-500 text-white px-2 rounded text-center'>
-                  Vivo
-                </span>
+                character.gender === 'Male' ? (
+                  <span className='bg-green-500 text-white px-2 rounded text-center'>
+                    Vivo
+                  </span>
+                ) : (
+                  <span className='bg-green-500 text-white px-2 rounded text-center'>
+                    Viva
+                  </span>
+                )
               ) : character.status === 'Dead' ? (
-                <span className='bg-red-500 text-white px-2 rounded text-center'>
-                  Muerto
-                </span>
+                character.gender === 'Male' ? (
+                  <span className='bg-red-500 text-white px-2 rounded text-center'>
+                    Muerto
+                  </span>
+                ) : (
+                  <span className='bg-red-500 text-white px-2 rounded text-center'>
+                    Muerta
+                  </span>
+                )
               ) : (
                 <span className='bg-yellow-500 text-white px-2 rounded text-center'>
                   Unknown
                 </span>
               )}
             </p>
+
             <p>
               <strong>Origen:</strong> {character.origin.name}
             </p>
