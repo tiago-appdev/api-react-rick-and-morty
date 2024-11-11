@@ -1,29 +1,13 @@
-import { useState, useEffect } from 'react';
-import Character from '../components/Character';
-import NavPage from '../components/NavPage';
-import Loading from '../components/Loading';
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { CharacterContext } from '../context/CharacterContext';
+import Loading from '../components/Loading';
 import Title from '../components/Title';
+import NavPage from '../components/NavPage';
+import Character from '../components/Character';
 
 const Main = () => {
-  const [loading, setLoading] = useState(true);
-  const [characters, setCharacters] = useState([]);
-  const [page, setPage] = useState(1);
-
-  useEffect(() => {
-    setLoading(true);
-    const fetchData = async () => {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character?page=${page}`
-      );
-      const { results } = await response.json();
-
-      setCharacters(results);
-      setLoading(false);
-    };
-
-    fetchData();
-  }, [page]);
+  const { loading, characters, page, setPage } = useContext(CharacterContext);
 
   return (
     <>
