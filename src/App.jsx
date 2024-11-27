@@ -10,7 +10,6 @@ const App = () => {
           <Route path='/' element={<Main />} />
           <Route path='/character/:id' element={<CharacterDetail />} />
         </Routes>
-
       </main>
     </Router>
   );
